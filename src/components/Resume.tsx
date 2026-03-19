@@ -108,7 +108,7 @@ export default function Resume() {
               className="relative max-w-5xl w-full h-full bg-white rounded-[2rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)]"
             >
               <img 
-                src={resumeUrl} 
+                src={kshitijResume} 
                 alt="Full Resume" 
                 className="w-full h-full object-contain bg-slate-100"
               />
