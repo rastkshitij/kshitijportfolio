@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, Download, FileText } from 'lucide-react';
-
+import kshitijResume from "../public/kshitijresume.png"
+import kshitijResumepdf from "../public/kshitijresume.pdf"
 export default function Resume() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
-  const resumeUrl = "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1000&auto=format&fit=crop";
+  const resumeUrl = kshitijResumepdf;
+
 
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Kshitij_Rastogi_Resume.jpg';
+    link.download = 'Kshitij_Rastogi_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -41,7 +43,7 @@ export default function Resume() {
               className="relative group cursor-pointer bg-muted rounded-3xl overflow-hidden border border-border aspect-[3/4] w-full md:w-1/2 shadow-2xl"
             >
               <img 
-                src={resumeUrl} 
+                src={kshitijResume} 
                 alt="Resume Thumbnail" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
