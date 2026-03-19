@@ -91,7 +91,8 @@ export default function ThreeBackground({ mode = 'idle' }: { mode?: 'idle' | 'wa
             blur={2.5} 
             far={4.5} 
           />
-          <Environment preset="night" />
+          <ambientLight intensity={0.5} />
+<directionalLight position={[5, 5, 5]} intensity={1.5} />
         </Suspense>
       </Canvas>
       

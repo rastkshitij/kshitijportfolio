@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     title: 'PulseTalk',
     description: 'An Health Care Aisstant that detects the disease  by image , chat , books appointment with doctor and has a voice asistant with multiple language support for the user to get help with his disease ',
-    features: ['Chat Asistant', 'Voice Assistant', 'Appointment Booking', 'Disease Detection throgh Image' , 'Admin Panel'],
+    features: ['Chat and Voice Asistant', 'Google Authentication', 'Appointment Booking', 'Disease Detection throgh Image' , 'Admin Panel'],
     image: pulsetalk,
     github: 'https://github.com/rastkshitij/Pulsetalk.git',
     live: 'https://pulsetalk.vercel.app/'
@@ -83,8 +83,11 @@ export default function Projects() {
               
               <div className="p-8">
                 <h3 className="text-2xl font-black mb-3 text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-foreground text-sm mb-6 font-medium line-clamp-2 leading-relaxed opacity-80">
+                <p className="text-foreground text-sm mb-6 font-medium line-clamp-3 leading-relaxed opacity-80">
                   {project.description}
+                </p>
+                 <p className="text-foreground text-sm mb-6 font-medium line-clamp-3 leading-relaxed opacity-80">
+                  {project.features.join(' • ')}
                 </p>
                 <div className="flex gap-6">
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-black text-primary hover:underline uppercase tracking-widest">
