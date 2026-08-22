@@ -8,7 +8,7 @@ const education = [
     institution: 'Rajkiya Engineering College Banda',
     university: 'Dr. A.P.J. Abdul Kalam Technical University (AKTU)',
     period: '2023 - Present',
-    details: 'Currently in Pre-final Year with a CGPA of 8.04/10',
+    details: 'Currently in final Year with a CGPA of 8 / 10',
     icon: <GraduationCap />
   },
   {

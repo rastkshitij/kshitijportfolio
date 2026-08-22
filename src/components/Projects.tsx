@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Maximize2, X } from 'lucide-react';
 import pulsetalk from "../public/pulsetalk.png"
-import jhoom from "../public/jhoom.png"
+import aiBattle from "../public/aibatle.png"
 import vlab from "../public/vlab.png"
 const projects = [
   {
@@ -25,12 +25,12 @@ const projects = [
   } ,
   {
     id: 3,
-    title: 'Jhoom Motion Tracking Music Player',
-    description: 'A music player that uses motion tracking to create an interactive and immersive music experience.',
-    features: ['Motion Tracking', 'Music Player', 'Interactive UI', 'Responsive Design'],
-    image: jhoom,
-    github: 'https://github.com',
-    live: 'https://jhoom-music-motion.netlify.app/'
+    title: 'LLM Evaluation Framework – Multi-Agent AI System',
+    description: `Engineered a scalable multi-agent AI workflow using LangChain and LangGraph, orchestrating parallel LLM responses, an LLM-as-a-Judge pipeline for quality and accuracy evaluation, and a modular architecture supporting additional models and evaluation strategies.`,
+    features: ['Mult-Agent System', 'JWT-Authorization', 'LLM-as-a-Judge', 'Modular Architecture'],
+    image: aiBattle,
+    github: 'https://github.com/rastkshitij/aiBattleArenaActual.git',
+    live: 'https://ai-battle-arena-actual-ten.vercel.app/'
   },
 
   

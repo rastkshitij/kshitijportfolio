@@ -8,10 +8,11 @@ const navLinks = [
   { name: 'About', to: 'about' },
   { name: 'Resume', to: 'resume' },
   { name: 'Experience', to: 'experience' },
+  {name: 'LeetCode', to: 'leetcode'},
   { name: 'Certificates', to: 'certificates' },
   { name: 'Projects', to: 'projects' },
   { name: 'Education', to: 'education' },
-  { name: 'Contact', to: 'contact' },
+  { name: 'Contact', to: 'contact' }
 ];
 
 export default function Navbar({ onScrollStart, onScrollEnd }: { onScrollStart: (type: 'walk' | 'run') => void, onScrollEnd: () => void }) {
