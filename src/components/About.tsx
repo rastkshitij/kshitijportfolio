@@ -1,15 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Server, Palette, User, Target, Rocket, Database } from 'lucide-react';
+import { Code, Server, Palette, User, Target, Rocket, Database , Brain , Container , FolderGit} from 'lucide-react';
 import { data } from 'framer-motion/client';
 import { version } from 'os';
 
 const skills = {
-  programming: ['JavaScript', 'Python', 'C'],
-  web: [ 'JavaScript', 'React', 'Node.js', 'Express.js' , 'threejs' ,'Socket.io' ,'nodemailer' , 'Tailwind CSS' ],
+  programming: ['JavaScript', 'Python', 'C' , 'Typescript'],
+  web: [ 'JavaScript', 'React', 'Node.js', 'Express.js' , 'threejs' ,'Socket.io' ,'nodemailer'  , 'Tailwind CSS' ],
   other: [ 'Graphic Design', 'Photo Editing', 'SVG Design'],
  database : [ 'MongoDB', 'Redis' , 'Firebase' ] ,
- versioncontrol : [ 'Git', 'GitHub' , 'Gen AI' , 'MediaPipe' ]
+ versioncontrol : [ 'Git', 'GitHub'  ] ,
+ ai:['LangChain' , 'Langraph' , 'PromptEngineering' , 'Mistral-AI' , 'LLM' , 'Gen AI' , 'Retrieval-Augmented Generation (RAG)']
+ , devops: ['Docker', 'Kubernetes', 'CI/CD', 'AWS', 'Azure']
 };
 
 export default function About() {
@@ -97,8 +99,10 @@ export default function About() {
             {[
               { title: 'Programming', icon: <Code />, items: skills.programming },
               { title: 'Web Development', icon: <Server />, items: skills.web },
+              { title: 'AI/ML', icon: <Brain />, items: skills.ai },
+              { title: 'DevOps', icon: <Container />, items: skills.devops },
                { title: ' Database', icon: <Database />, items: skills.database },
-              { title: 'Version Control AND AI', icon: <Code/>, items: skills.versioncontrol },
+              { title: 'Version Control ', icon: <FolderGit />, items: skills.versioncontrol }, 
                { title: 'Other Skills', icon: <Palette />, items: skills.other }
             ].map((skillGroup, idx) => (
               <motion.div 
