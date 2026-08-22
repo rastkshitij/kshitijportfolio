@@ -7,7 +7,7 @@ import { Link } from 'react-scroll';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere, MeshWobbleMaterial, Icosahedron, PerspectiveCamera, Environment } from '@react-three/drei';
 import * as THREE from 'three';
-import image from '../public/profile2.jpeg';
+import image from '../public/newProfile.jpeg';
 
 function GradientMesh() {
   const meshRef = useRef<THREE.Mesh>(null);

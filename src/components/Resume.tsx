@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, Download, FileText } from 'lucide-react';
-import kshitijResume from "../public/kshitijresume.png"
-import kshitijResumepdf from "../public/kshitijresume.pdf"
+import kshitijResume from "../public/resume.png"
+import kshitijResumepdf from "../public/kshitijresumefinal.pdf"
 export default function Resume() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const resumeUrl = kshitijResumepdf;
