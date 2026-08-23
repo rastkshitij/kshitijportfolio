@@ -66,12 +66,8 @@ export default function App() {
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
 
-    // Loading screen simulation
-    const timer = setTimeout(() => setLoading(false), 2000);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    // Instant load
+    setLoading(false);
   }, []);
 
   return (
