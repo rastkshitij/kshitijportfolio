@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Trophy, Flame, Target, TrendingUp, ExternalLink, RefreshCw, Calendar } from 'lucide-react';
+import profileImg from '../public/newProfile.jpeg';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface LeetCodeBadge {
@@ -76,7 +77,7 @@ function formatBadgeIcon(icon: string): string {
 const HARDCODED_FALLBACK_STATS: LeetCodeStats = {
     username: USERNAME,
     name: USERNAME,
-    avatar: 'https://assets.leetcode.com/users/default_avatar.jpg',
+    avatar: profileImg,
     ranking: 1019624,
     totalSolved: 168,
     totalQuestions: 4033,
@@ -429,12 +430,12 @@ export default function Leetcode() {
                                     <div className="flex items-center gap-4 mb-6">
                                         {stats.avatar ? (
                                             <img
-                                                src={stats.avatar ? stats.avatar : '../public/newProfile.jpeg'}
+                                                src={stats.avatar || profileImg}
                                                 alt={stats.name}
                                                 className="w-16 h-16 rounded-full border-2 border-primary shadow-lg shadow-primary/30 object-cover flex-shrink-0"
                                                 onError={(e) => {
                                                     (e.target as HTMLImageElement).onerror = null;
-                                                    (e.target as HTMLImageElement).src = 'https://assets.leetcode.com/users/default_avatar.jpg';
+                                                    (e.target as HTMLImageElement).src = profileImg;
                                                 }}
                                             />
                                         ) : (
@@ -472,7 +473,7 @@ export default function Leetcode() {
                                                                     className="w-10 h-10 object-contain drop-shadow-[0_2px_8px_rgba(0,255,94,0.3)] hover:scale-110 transition-transform cursor-pointer"
                                                                     onError={(e) => {
                                                                         (e.target as HTMLImageElement).onerror = null;
-                                                                        (e.target as HTMLImageElement).src = 'https://assets.leetcode.com/static_assets/others/50_days_badge_2024.png';
+                                                                        (e.target as HTMLImageElement).style.display = 'none';
                                                                     }}
                                                                 />
                                                                 <div className="pointer-events-none absolute bottom-full mb-2 hidden group-hover:block bg-popover/90 text-popover-foreground text-[10px] font-bold px-2.5 py-1 rounded-lg border border-border shadow-xl whitespace-nowrap z-50">
