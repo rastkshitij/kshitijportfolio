@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Code, Server, Palette, User, Target, Rocket, Database , Brain , Container , FolderGit} from 'lucide-react';
 import { data } from 'framer-motion/client';
 import { version } from 'os';
-
+//skill section
 const skills = {
   programming: ['JavaScript', 'Python', 'C' , 'Typescript'],
   web: [ 'JavaScript', 'React', 'Node.js', 'Express.js' , 'threejs' ,'Socket.io' ,'nodemailer'  , 'Tailwind CSS' ],
