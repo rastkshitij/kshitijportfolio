@@ -47,7 +47,7 @@ function generateFallbackCalendar(): Record<string, number> {
     today.setHours(0, 0, 0, 0);
 
     // 73-day continuous current streak up to today
-    for (let i = 0; i < 73; i++) {
+    for (let i = 0; i < 75; i++) {
         const d = new Date(today);
         d.setDate(d.getDate() - i);
         const timestamp = Math.floor(d.getTime() / 1000).toString();
@@ -79,13 +79,13 @@ const HARDCODED_FALLBACK_STATS: LeetCodeStats = {
     name: USERNAME,
     avatar: profileImg,
     ranking: 1019624,
-    totalSolved: 168,
+    totalSolved: 175,
     totalQuestions: 4033,
-    easySolved: 91,
+    easySolved: 93,
     totalEasy: 961,
-    mediumSolved: 67,
+    mediumSolved: 70,
     totalMedium: 2105,
-    hardSolved: 10,
+    hardSolved: 12,
     totalHard: 967,
     acceptanceRate: 84.5,
     contributionPoints: 0,
@@ -179,24 +179,50 @@ function heatColor(count: number): string {
     return '#39ff14';                  // Electric Lime Green (6+ submissions)
 }
 
-function getCurrentStreak(calendar: Record<string, number>): number {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    let streak = 0;
-    const d = new Date(today);
+function getMaxStreak(calendar: Record<string, number>): number {
+    if (!calendar || Object.keys(calendar).length === 0) return 0;
 
-    while (true) {
-        const startOfDay = Math.floor(d.getTime() / 1000);
-        const endOfDay = startOfDay + 86400;
-        const found = Object.keys(calendar).some((ts) => {
-            const tsNum = Number(ts);
-            return tsNum >= startOfDay && tsNum < endOfDay;
-        });
-        if (!found) break;
-        streak++;
-        d.setDate(d.getDate() - 1);
+    const daysSet = new Set<string>();
+    for (const tsStr of Object.keys(calendar)) {
+        if (calendar[tsStr] > 0) {
+            const ts = Number(tsStr);
+            if (isNaN(ts)) continue;
+            const date = new Date(ts > 1e11 ? ts : ts * 1000);
+            const dayKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+            daysSet.add(dayKey);
+        }
     }
-    return streak;
+
+    if (daysSet.size === 0) return 0;
+
+    const sortedDayTimestamps = Array.from(daysSet)
+        .map((dStr) => {
+            const [y, m, d] = dStr.split('-').map(Number);
+            return Date.UTC(y, m - 1, d);
+        })
+        .sort((a, b) => a - b);
+
+    const ONE_DAY_MS = 86400000;
+    let maxStreak = 0;
+    let currentStreak = 0;
+    let prevDay: number | null = null;
+
+    for (const dayTs of sortedDayTimestamps) {
+        if (prevDay === null) {
+            currentStreak = 1;
+        } else if (dayTs - prevDay === ONE_DAY_MS) {
+            currentStreak++;
+        } else if (dayTs - prevDay > ONE_DAY_MS) {
+            currentStreak = 1;
+        }
+
+        if (currentStreak > maxStreak) {
+            maxStreak = currentStreak;
+        }
+        prevDay = dayTs;
+    }
+
+    return maxStreak;
 }
 
 // ─── Circular Progress ────────────────────────────────────────────────────────
@@ -352,7 +378,7 @@ export default function Leetcode() {
 
 
     const weeks = calendarData ? getCalendarGrid(calendarData).slice(-10) : [];
-    const streak = calendarData ? getCurrentStreak(calendarData) : 0;
+    const maxStreak = calendarData ? getMaxStreak(calendarData) : 0;
     const activeDays = calendarData ? Object.values(calendarData).filter((v) => v > 0).length : 0;
 
     const SkeletonBlock = ({ className }: { className: string }) => (
@@ -603,12 +629,12 @@ export default function Leetcode() {
                                         </div>
                                         <div>
                                             <p className="text-2xl font-black text-foreground">
-                                                {streak}{' '}
+                                                {maxStreak}{' '}
                                                 <span className="text-base font-semibold text-amber-400">
-                                                    day{streak !== 1 ? 's' : ''}
+                                                    day{maxStreak !== 1 ? 's' : ''}
                                                 </span>
                                             </p>
-                                            <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Current Streak</p>
+                                            <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Max Streak</p>
                                         </div>
                                     </motion.div>
 
