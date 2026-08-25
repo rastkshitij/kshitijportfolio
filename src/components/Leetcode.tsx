@@ -45,7 +45,7 @@ function generateFallbackCalendar(): Record<string, number> {
     const calendar: Record<string, number> = {};
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-
+// this is the component which handle the leetcode 
     // 73-day continuous current streak up to today
     for (let i = 0; i < 75; i++) {
         const d = new Date(today);
