@@ -1,134 +1,219 @@
-# 🚀 Kshitij Rastogi — 3D Developer Portfolio
+<div align="center">
 
-A modern, highly interactive **3D Developer Portfolio** built with **React**, **Three.js**, **React Three Fiber**, **Framer Motion**, and **Tailwind CSS**. This portfolio features an animated 3D canvas background with scroll-reactive avatar movement state management, interactive problem-solving dashboards, modular UI components, and a serverless contact API.
+  <h1>🌌 Kshitij Rastogi — 3D Developer Portfolio</h1>
+
+  <p>
+    <strong>A next-generation, highly interactive 3D web application powered by React, Three.js, R3F, Framer Motion, and Tailwind CSS.</strong>
+  </p>
+
+  <p>
+    <a href="#-overview">Overview</a> •
+    <a href="#-features--highlights">Features</a> •
+    <a href="#%EF%B8%8F-tech-stack">Tech Stack</a> •
+    <a href="#%EF%B8%8F-architecture--project-structure">Architecture</a> •
+    <a href="#%EF%B8%8F-getting-started">Getting Started</a> •
+    <a href="#-contact--connect">Contact</a>
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+    <img src="https://img.shields.io/badge/Three.js-0.160-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" />
+    <img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-v4.1-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Vite-6.2-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/Framer_Motion-11.18-E71585?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+    <img src="https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+  </p>
+
+</div>
+
+---
+
+## 📖 Overview
+
+Welcome to the source repository of **Kshitij Rastogi's 3D Portfolio**. Built with modern web standards, this portfolio combines immersive 3D canvas graphics, smooth velocity-driven character locomotion, real-time LeetCode problem-solving analytics, interactive project showcases, and a seamless serverless contact backend.
+
+> [!TIP]
+> **Key Highlight**: The 3D avatar on the background canvas seamlessly adapts its motion state (`idle` ↔ `walk` ↔ `run`) based on real-time scroll velocity calculated using `framer-motion` hooks!
 
 ---
 
 ## 🌟 Features & Highlights
 
-- **3D Background Canvas (`ThreeBackground`)**: Interactive 3D scene powered by Three.js & `@react-three/fiber` featuring dynamic lighting, particle effects, and floating 3D elements.
-- **Scroll-Reactive Character Mechanics**: Character animation states (`idle` ↔ `walk` ↔ `run`) dynamically driven by scroll velocity (`framer-motion`) and navigation clicks.
-- **LeetCode Stats Dashboard (`Leetcode`)**: Dedicated interactive section visualizing solved problem metrics, difficulty distributions, topic tags, and streak trackers.
-- **Interactive Experience Timeline (`Experience`)**: Visual card timeline detailing professional software engineering experience and roles.
-- **Projects Showcase (`Projects`)**: Filterable project cards highlighting full-stack web applications with live links and source code buttons.
-- **Certifications Gallery (`Certificates`)**: Tech certification grid with preview modals and direct verification links.
-- **Education & Resume Viewer**: Detailed academic background along with quick resume preview and download features.
-- **Serverless Contact Form (`Contact`)**: Functional contact form powered by an Express API locally and Vercel serverless functions in production.
-- **Responsive Dark Design**: Optimized for all device sizes with Tailwind CSS v4 and sleek micro-animations.
-
----
-
-## 🏗️ Architecture & Project Structure
-
-The project follows a component-driven architecture separating UI components, 3D graphics state engines, and API endpoints.
-
-```
-kshitij3jsportfolio/
-├── api/
-│   └── contact.ts           # Production Vercel serverless API function
-├── public/                  # Static assets (3D GLTF models, icons, images)
-├── src/
-│   ├── components/
-│   │   ├── About.tsx        # Technical skills & bio section
-│   │   ├── Certificates.tsx # Certifications card grid & viewer
-│   │   ├── Contact.tsx      # Interactive contact form & API integration
-│   │   ├── Education.tsx    # Academic timeline & qualifications
-│   │   ├── Experience.tsx   # Professional career history timeline
-│   │   ├── Hero.tsx         # Intro landing section with animated typewriter
-│   │   ├── Leetcode.tsx     # Coding stats dashboard & topic breakdowns
-│   │   ├── Navbar.tsx       # Navigation bar with scroll-trigger dispatchers
-│   │   ├── Projects.tsx     # Card showcase of full-stack projects
-│   │   ├── Resume.tsx       # Resume preview modal / download links
-│   │   └── ThreeBackground.tsx # Three.js canvas, GLTF model loader & animation loop
-│   ├── lib/
-│   │   └── utils.ts         # Helper utilities (clsx + tailwind-merge)
-│   ├── App.tsx              # Main layout, scroll velocity listener & state orchestrator
-│   ├── index.css            # Tailwind CSS styling & custom dark mode rules
-│   └── main.tsx             # React application entry point
-├── server.ts                # Custom Node.js/Express server for dev & local API testing
-├── vercel.json              # Rewrites configuration for Vercel deployment
-├── vite.config.ts           # Vite build & plugin configuration
-└── package.json             # Project metadata and dependency configuration
-```
-
-### 🧠 Core Architectural Flow
-1. **Scroll State Engine**: `App.tsx` attaches listeners to `scrollYProgress` and `scrollVelocity` using `framer-motion`. State updates trigger prop changes in `ThreeBackground.tsx`.
-2. **3D Animation Loop**: `ThreeBackground.tsx` consumes the `movementMode` prop (`idle`, `walk`, `run`) to smoothly transition 3D avatar GLTF clip actions via `@react-three/drei` and `framer-motion-3d`.
-3. **Contact API Handling**:
-   - **Local Development**: `server.ts` runs an Express backend that handles `POST /api/contact`.
-   - **Production**: Requests to `/api/contact` are routed via `vercel.json` to the Vercel serverless function at `api/contact.ts`.
+| Feature | Description | Tech Stack |
+| :--- | :--- | :--- |
+| 🎨 **Interactive 3D Canvas** | Dynamic background scene rendering lighting, custom particle fields, and responsive 3D avatar GLTF models. | `Three.js`, `@react-three/fiber`, `drei` |
+| 🏃 **Scroll-Reactive Locomotion** | Real-time scroll velocity tracking driving avatar animation state transitions (`idle`, `walk`, `run`). | `framer-motion`, `framer-motion-3d` |
+| 📊 **LeetCode Stats Dashboard** | Dedicated interactive analytics section displaying solved problem metrics, difficulty breakdown, and topic tags. | `React`, `Lucide Icons` |
+| 💼 **Career Experience Timeline** | Visual timeline detailing professional software engineering milestones, roles, and technical achievements. | `Framer Motion`, `Tailwind CSS` |
+| 🚀 **Interactive Projects Grid** | Filterable project showcase featuring detailed cards, tech badges, live demos, and repository links. | `React`, `Tailwind CSS` |
+| 📜 **Certifications & Resume** | Interactive certification card grid with preview modals and direct download options for resume. | `React`, Modal Portal |
+| 📬 **Serverless Contact System** | Functional contact form with Express backend for local development and Vercel serverless function in production. | `Express.js`, `Vercel Serverless` |
+| 🌙 **Sleek Dark Theme** | Ultra-responsive layout designed with Tailwind CSS v4, dynamic glassmorphism, and micro-animations. | `Tailwind CSS v4` |
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend & Graphics
-- **Core Library**: [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Build Tool**: [Vite 6](https://vitejs.dev/)
-- **3D Graphics & Models**: [Three.js](https://threejs.org/), [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber), [@react-three/drei](https://github.com/pmndrs/drei), `framer-motion-3d`, `maath`
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/), `@tailwindcss/vite`
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons & UI Helpers**: [Lucide React](https://lucide.dev/), `react-scroll`, `react-simple-typewriter`
+### Core Ecosystem & 3D Engine
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white)
+![React Three Fiber](https://img.shields.io/badge/R3F-000000?style=flat-square&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 
-### Backend & API
-- **Server Framework**: [Express.js](https://expressjs.com/) (Local server)
-- **Deployment & Serverless**: [Vercel Serverless Functions](https://vercel.com/docs/functions) (`@vercel/node`)
+### Styling, Motion & UI
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
+![Lucide Icons](https://img.shields.io/badge/Lucide_Icons-F56565?style=flat-square&logo=lucide&logoColor=white)
+
+### Backend, Serverless & Infrastructure
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
 ---
 
-## ⚙️ Getting Started (Run Locally)
+## 🏗️ Architecture & Project Structure
 
-Follow these steps to run the application on your local environment:
+The codebase is organized modularly into feature components, 3D graphics handlers, and API endpoints:
 
-### 1. Prerequisites
-Ensure you have the following installed on your machine:
-- **Node.js**: `v18.0.0` or higher
-- **npm** (v9+) or **yarn** / **pnpm**
+```
+kshitij3jsportfolio/
+├── 📁 api/
+│   └── contact.ts           # Vercel serverless function for contact endpoint
+├── 📁 public/                  # Static assets (3D GLTF models, icons, documents)
+├── 📁 src/
+│   ├── 📁 components/
+│   │   ├── About.tsx        # Technical skills & bio section
+│   │   ├── Certificates.tsx # Certifications grid & preview modal
+│   │   ├── Contact.tsx      # Contact form component & API fetcher
+│   │   ├── Education.tsx    # Academic timeline & qualifications
+│   │   ├── Experience.tsx   # Professional history timeline
+│   │   ├── Hero.tsx         # Intro landing hero with animated typewriter
+│   │   ├── Leetcode.tsx     # Coding stats dashboard & topic analytics
+│   │   ├── Navbar.tsx       # Navigation bar & smooth scroll triggers
+│   │   ├── Projects.tsx     # Full-stack project cards showcase
+│   │   ├── Resume.tsx       # Resume preview modal & quick downloads
+│   │   └── ThreeBackground.tsx # R3F canvas, GLTF avatar loader & animation loop
+│   ├── 📁 lib/
+│   │   └── utils.ts         # Utility helpers (clsx + tailwind-merge)
+│   ├── App.tsx              # Main layout, scroll velocity listener & state engine
+│   ├── index.css            # Tailwind CSS styling & custom design tokens
+│   └── main.tsx             # React application entry point
+├── server.ts                # Express server for local development & API testing
+├── vercel.json              # Vercel route rewrites & serverless configuration
+├── vite.config.ts           # Vite build & React plugin configuration
+└── package.json             # Dependencies and project scripts
+```
 
-### 2. Clone the Repository
+### 🧠 Core System Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as User / Browser
+    participant App as App.tsx (Scroll Engine)
+    participant Three as ThreeBackground.tsx (R3F)
+    participant API as Express / Vercel Serverless
+
+    User->>App: Scrolls page / Clicks navbar link
+    App->>App: Calculates scroll velocity via Framer Motion
+    App->>Three: Passes updated `movementMode` prop ('idle' | 'walk' | 'run')
+    Three->>Three: Cross-fades GLTF avatar animation clips in render loop
+    User->>API: Submits Contact Form (POST /api/contact)
+    API-->>User: Validates request & returns JSON status response
+```
+
+---
+
+## ⚙️ Getting Started
+
+Follow these step-by-step instructions to set up and run the project locally.
+
+### 1️⃣ Prerequisites
+
+Ensure you have the following installed on your local machine:
+- **Node.js**: `v18.0.0` or higher ([Download Node.js](https://nodejs.org/))
+- **Package Manager**: `npm` (v9+) included with Node, or `pnpm` / `yarn`
+
+### 2️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/your-username/kshitij3jsportfolio.git
 cd kshitij3jsportfolio
 ```
 
-### 3. Install Dependencies
+### 3️⃣ Install Dependencies
+
 ```bash
 npm install
 ```
 
-### 4. Run the Local Development Server
+### 4️⃣ Run Development Server
 
-#### Option A: Standard Vite Dev Server
-To launch the Vite development server with hot-module replacement (HMR):
+Choose one of the following execution modes:
+
+#### 🟢 Standard Development Mode (Vite Server)
+Launches Vite with fast Hot Module Replacement (HMR):
 ```bash
 npm run dev
 ```
-Open your browser and navigate to `http://localhost:5173`.
+> Access app at: `http://localhost:5173`
 
-#### Option B: Express Server with API Endpoints
-To test local API endpoints (`/api/contact`) alongside the Vite app using the Express server:
+#### 🟡 Full-Stack API Mode (Express Server)
+Runs local Express backend for testing `/api/contact` alongside the app:
 ```bash
 npx tsx server.ts
 ```
-Open your browser and navigate to `http://localhost:3000`.
+> Access app at: `http://localhost:3000`
 
 ---
 
-## 📦 Building for Production
+## 📦 Production Build & Deployment
 
-To create an optimized production build:
+### Build Executable Bundle
+To create an optimized production build in the `dist/` directory:
 ```bash
 npm run build
 ```
 
-To preview the production build locally:
+### Preview Production Build Locally
 ```bash
 npm run preview
 ```
+
+### 🚀 Deploying to Vercel
+This repository is pre-configured for Vercel deployment via `vercel.json`:
+1. Push your repository to GitHub.
+2. Import the repo in your [Vercel Dashboard](https://vercel.com/dashboard).
+3. Vercel will automatically detect Vite and serve static assets along with serverless API routes in `api/contact.ts`.
+
+---
+
+## 📬 Contact & Connect
+
+<div align="center">
+
+  <a href="https://github.com/">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="https://linkedin.com/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="mailto:your-email@example.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+
+</div>
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
+<div align="center">
+  <sub>Built with ❤️ by <strong>Kshitij Rastogi</strong> using React, Three.js & Framer Motion</sub>
+</div>
