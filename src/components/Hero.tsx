@@ -95,7 +95,7 @@ export default function Hero() {
         />
 
         <Canvas className="opacity-20 dark:opacity-10">
-          <PerspectiveCamera makeDefault position={[0, 0, 25]} />
+          <PerspectiveCamera makeDefault position={[0, 0, 25]} {...({} as any)} />
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
           <Suspense fallback={null}>
