@@ -1,29 +1,31 @@
 <div align="center">
 
-  <h1>🌌 Kshitij Rastogi — 3D Developer Portfolio</h1>
+  <br />
 
-  <p>
-    <strong>A next-generation, highly interactive 3D web application powered by React, Three.js, R3F, Framer Motion, and Tailwind CSS.</strong>
+  # 🌌 Kshitij Rastogi — 3D Developer Portfolio
+
+  <p align="center">
+    <strong>A next-generation, highly interactive 3D web application powered by React 18, Three.js, React Three Fiber, Framer Motion, and Tailwind CSS.</strong>
   </p>
 
-  <p>
+  <p align="center">
     <a href="#-overview">Overview</a> •
-    <a href="#-features--highlights">Features</a> •
+    <a href="#-key-features">Key Features</a> •
     <a href="#%EF%B8%8F-tech-stack">Tech Stack</a> •
-    <a href="#%EF%B8%8F-architecture--project-structure">Architecture</a> •
-    <a href="#%EF%B8%8F-getting-started">Getting Started</a> •
+    <a href="#-architecture--system-design">Architecture</a> •
+    <a href="#-getting-started">Getting Started</a> •
     <a href="#-contact--connect">Contact</a>
   </p>
 
-  <p>
-    <img src="https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-    <img src="https://img.shields.io/badge/Three.js-0.160-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" />
-    <img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Tailwind_CSS-v4.1-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-    <img src="https://img.shields.io/badge/Vite-6.2-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-    <img src="https://img.shields.io/badge/Framer_Motion-11.18-E71585?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
-    <img src="https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
-    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+  <p align="center">
+    <a href="https://github.com/rastkshitij/kshitijportfolio"><img src="https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18" /></a>
+    <a href="https://threejs.org/"><img src="https://img.shields.io/badge/Three.js-0.160-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" /></a>
+    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /></a>
+    <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-v4.1-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /></a>
+    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-6.2-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /></a>
+    <a href="https://www.framer.com/motion/"><img src="https://img.shields.io/badge/Framer_Motion-11.18-E71585?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" /></a>
+    <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License MIT" /></a>
   </p>
 
 </div>
@@ -32,179 +34,203 @@
 
 ## 📖 Overview
 
-Welcome to the source repository of **Kshitij Rastogi's 3D Portfolio**. Built with modern web standards, this portfolio combines immersive 3D canvas graphics, smooth velocity-driven character locomotion, real-time LeetCode problem-solving analytics, interactive project showcases, and a seamless serverless contact backend.
+Welcome to the official repository of **Kshitij Rastogi's 3D Interactive Portfolio**. 
+
+Engineered with modern web standards and cutting-edge 3D graphics libraries, this portfolio delivers an immersive user experience combining real-time 3D canvas rendering, scroll-velocity-driven avatar locomotion, interactive project showcases, LeetCode problem-solving metrics, and a seamless serverless contact backend.
 
 > [!TIP]
-> **Key Highlight**: The 3D avatar on the background canvas seamlessly adapts its motion state (`idle` ↔ `walk` ↔ `run`) based on real-time scroll velocity calculated using `framer-motion` hooks!
+> **Dynamic 3D Locomotion System**: The background 3D avatar dynamically cross-fades animation clips (`idle` ↔ `walk` ↔ `run`) based on real-time scroll velocity calculations powered by `framer-motion` hooks.
 
 ---
 
-## 🌟 Features & Highlights
+## 🌟 Key Features
 
-| Feature | Description | Tech Stack |
+| Icon | Feature | Description | Tech Stack |
+| :---: | :--- | :--- | :--- |
+| 🎨 | **Interactive 3D Canvas** | Dynamic background scene rendering lighting, custom particle fields, and responsive 3D GLTF avatar models. | `Three.js`, `@react-three/fiber`, `@react-three/drei` |
+| 🏃 | **Velocity Locomotion** | Real-time scroll velocity tracking driving smooth avatar animation state transitions (`idle`, `walk`, `run`). | `framer-motion`, `framer-motion-3d` |
+| 📊 | **LeetCode Stats Engine** | Interactive coding stats dashboard showcasing total solved problems, difficulty breakdown, and topic tags. | `React`, `Lucide Icons` |
+| 💼 | **Career Timeline** | Visual milestone timeline highlighting engineering experience, tech stacks, and key achievements. | `Framer Motion`, `Tailwind CSS` |
+| 🚀 | **Projects Showcase** | Dynamic project card grid featuring detailed descriptions, live demos, code repositories, and filter tags. | `React`, `Tailwind CSS v4` |
+| 📜 | **Certifications & Resume** | Interactive certification gallery with modal view options and direct resume download. | `React`, Portal Modals |
+| 📬 | **Full-Stack Contact** | Functional contact system supporting Express for local development and Vercel Serverless Functions in production. | `Express.js`, `Vercel Serverless` |
+| 🌙 | **Glassmorphic UI** | Ultra-sleek dark theme aesthetic with dynamic glassmorphism, responsive grids, and micro-interactions. | `Tailwind CSS v4`, `Lucide React` |
+
+---
+
+## 🛠️ Tech Stack & Ecosystem
+
+<details open>
+<summary><strong>Core Engine & Frontend</strong></summary>
+<br />
+
+| Technology | Badge | Description |
 | :--- | :--- | :--- |
-| 🎨 **Interactive 3D Canvas** | Dynamic background scene rendering lighting, custom particle fields, and responsive 3D avatar GLTF models. | `Three.js`, `@react-three/fiber`, `drei` |
-| 🏃 **Scroll-Reactive Locomotion** | Real-time scroll velocity tracking driving avatar animation state transitions (`idle`, `walk`, `run`). | `framer-motion`, `framer-motion-3d` |
-| 📊 **LeetCode Stats Dashboard** | Dedicated interactive analytics section displaying solved problem metrics, difficulty breakdown, and topic tags. | `React`, `Lucide Icons` |
-| 💼 **Career Experience Timeline** | Visual timeline detailing professional software engineering milestones, roles, and technical achievements. | `Framer Motion`, `Tailwind CSS` |
-| 🚀 **Interactive Projects Grid** | Filterable project showcase featuring detailed cards, tech badges, live demos, and repository links. | `React`, `Tailwind CSS` |
-| 📜 **Certifications & Resume** | Interactive certification card grid with preview modals and direct download options for resume. | `React`, Modal Portal |
-| 📬 **Serverless Contact System** | Functional contact form with Express backend for local development and Vercel serverless function in production. | `Express.js`, `Vercel Serverless` |
-| 🌙 **Sleek Dark Theme** | Ultra-responsive layout designed with Tailwind CSS v4, dynamic glassmorphism, and micro-animations. | `Tailwind CSS v4` |
+| **React 18** | ![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | UI Library & Component Architecture |
+| **TypeScript** | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) | Type-safe Application Logic |
+| **Three.js** | ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white) | WebGL 3D Engine |
+| **React Three Fiber** | ![R3F](https://img.shields.io/badge/R3F-000000?style=for-the-badge&logo=react&logoColor=61DAFB) | Declarative 3D Canvas Renderer |
+| **Vite** | ![Vite](https://img.shields.io/badge/Vite_6-646CFF?style=for-the-badge&logo=vite&logoColor=white) | Next-gen Frontend Tooling & HMR |
+
+</details>
+
+<details open>
+<summary><strong>Styling, Motion & UI Controls</strong></summary>
+<br />
+
+| Technology | Badge | Description |
+| :--- | :--- | :--- |
+| **Tailwind CSS v4** | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | Utility-first CSS Framework & Tokens |
+| **Framer Motion** | ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white) | Fluid UI Animations & Scroll Velocity Engine |
+| **Lucide Icons** | ![Lucide Icons](https://img.shields.io/badge/Lucide_Icons-F56565?style=for-the-badge&logo=lucide&logoColor=white) | Clean, Modern SVG Vector Icons |
+
+</details>
+
+<details open>
+<summary><strong>Backend & Deployment Infrastructure</strong></summary>
+<br />
+
+| Technology | Badge | Description |
+| :--- | :--- | :--- |
+| **Node.js & Express** | ![Node.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) | Local Dev API Server & Contact Handler |
+| **Vercel** | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) | Global Edge Network & Serverless Functions |
+
+</details>
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ Architecture & System Design
 
-### Core Ecosystem & 3D Engine
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white)
-![React Three Fiber](https://img.shields.io/badge/R3F-000000?style=flat-square&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+### 📂 Directory Map
 
-### Styling, Motion & UI
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
-![Lucide Icons](https://img.shields.io/badge/Lucide_Icons-F56565?style=flat-square&logo=lucide&logoColor=white)
-
-### Backend, Serverless & Infrastructure
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-
----
-
-## 🏗️ Architecture & Project Structure
-
-The codebase is organized modularly into feature components, 3D graphics handlers, and API endpoints:
-
-```
+```text
 kshitij3jsportfolio/
 ├── 📁 api/
-│   └── contact.ts           # Vercel serverless function for contact endpoint
-├── 📁 public/                  # Static assets (3D GLTF models, icons, documents)
+│   └── contact.ts              # Vercel serverless function for contact processing
+├── 📁 public/                     # Static assets (3D GLTF models, icons, resume PDF)
 ├── 📁 src/
 │   ├── 📁 components/
-│   │   ├── About.tsx        # Technical skills & bio section
-│   │   ├── Certificates.tsx # Certifications grid & preview modal
-│   │   ├── Contact.tsx      # Contact form component & API fetcher
-│   │   ├── Education.tsx    # Academic timeline & qualifications
-│   │   ├── Experience.tsx   # Professional history timeline
-│   │   ├── Hero.tsx         # Intro landing hero with animated typewriter
-│   │   ├── Leetcode.tsx     # Coding stats dashboard & topic analytics
-│   │   ├── Navbar.tsx       # Navigation bar & smooth scroll triggers
-│   │   ├── Projects.tsx     # Full-stack project cards showcase
-│   │   ├── Resume.tsx       # Resume preview modal & quick downloads
-│   │   └── ThreeBackground.tsx # R3F canvas, GLTF avatar loader & animation loop
+│   │   ├── About.tsx           # Technical skills & personal bio
+│   │   ├── Certificates.tsx    # Certifications showcase & preview modal
+│   │   ├── Contact.tsx         # Interactive contact form & email trigger
+│   │   ├── Education.tsx       # Academic background & qualifications timeline
+│   │   ├── Experience.tsx      # Professional career milestones timeline
+│   │   ├── Hero.tsx            # Hero banner with typewriter animation
+│   │   ├── Leetcode.tsx        # LeetCode analytics dashboard & topic stats
+│   │   ├── Navbar.tsx          # Navigation bar with smooth scroll triggers
+│   │   ├── Projects.tsx        # Portfolio project cards & live links
+│   │   ├── Resume.tsx          # Resume modal viewer & download triggers
+│   │   └── ThreeBackground.tsx # R3F Canvas, GLTF character loader & animation loop
 │   ├── 📁 lib/
-│   │   └── utils.ts         # Utility helpers (clsx + tailwind-merge)
-│   ├── App.tsx              # Main layout, scroll velocity listener & state engine
-│   ├── index.css            # Tailwind CSS styling & custom design tokens
-│   └── main.tsx             # React application entry point
-├── server.ts                # Express server for local development & API testing
-├── vercel.json              # Vercel route rewrites & serverless configuration
-├── vite.config.ts           # Vite build & React plugin configuration
-└── package.json             # Dependencies and project scripts
+│   │   └── utils.ts            # Utility functions (clsx + tailwind-merge)
+│   ├── App.tsx                 # Main Application Layout & Scroll Engine State
+│   ├── index.css               # Tailwind CSS v4 setup & custom glassmorphism styles
+│   └── main.tsx                # Application Entry Point
+├── server.ts                   # Express server for local backend testing
+├── vercel.json                 # Vercel serverless build & rewrite rules
+├── vite.config.ts              # Vite plugins & build optimization config
+└── package.json                # Project dependencies & npm scripts
 ```
 
-### 🧠 Core System Flow
+### 🧠 Core System Execution Flow
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor User as User / Browser
     participant App as App.tsx (Scroll Engine)
-    participant Three as ThreeBackground.tsx (R3F)
-    participant API as Express / Vercel Serverless
+    participant R3F as ThreeBackground.tsx (R3F Canvas)
+    participant API as Express / Vercel API
 
-    User->>App: Scrolls page / Clicks navbar link
-    App->>App: Calculates scroll velocity via Framer Motion
-    App->>Three: Passes updated `movementMode` prop ('idle' | 'walk' | 'run')
-    Three->>Three: Cross-fades GLTF avatar animation clips in render loop
-    User->>API: Submits Contact Form (POST /api/contact)
-    API-->>User: Validates request & returns JSON status response
+    User->>App: Scrolls viewport or clicks Nav menu
+    App->>App: Tracks scroll velocity using Framer Motion hooks
+    App->>R3F: Passes updated `movementMode` ('idle' | 'walk' | 'run')
+    R3F->>R3F: Cross-fades GLTF avatar animation clips in render loop
+    User->>API: Submits contact form (POST /api/contact)
+    API-->>User: Validates request payload & returns status JSON
 ```
 
 ---
 
 ## ⚙️ Getting Started
 
-Follow these step-by-step instructions to set up and run the project locally.
+Follow these instructions to set up and run the repository on your local system.
 
-### 1️⃣ Prerequisites
+### 1. Prerequisites
 
-Ensure you have the following installed on your local machine:
-- **Node.js**: `v18.0.0` or higher ([Download Node.js](https://nodejs.org/))
-- **Package Manager**: `npm` (v9+) included with Node, or `pnpm` / `yarn`
+Ensure your environment meets the following requirements:
+* **Node.js**: `v18.0.0` or higher ([Download Node.js](https://nodejs.org/))
+* **Package Manager**: `npm` (v9+) or `pnpm` / `yarn`
 
-### 2️⃣ Clone the Repository
+### 2. Installation
 
-```bash
-git clone https://github.com/your-username/kshitij3jsportfolio.git
-cd kshitij3jsportfolio
-```
-
-### 3️⃣ Install Dependencies
+Clone the project repository and install dependencies:
 
 ```bash
+# Clone the repository
+git clone https://github.com/rastkshitij/kshitijportfolio.git
+
+# Navigate to project root directory
+cd kshitijportfolio
+
+# Install package dependencies
 npm install
 ```
 
-### 4️⃣ Run Development Server
+### 3. Development Server Modes
 
-Choose one of the following execution modes:
+You can run the project in standard frontend mode or full-stack API mode:
 
-#### 🟢 Standard Development Mode (Vite Server)
-Launches Vite with fast Hot Module Replacement (HMR):
+#### 🟢 Standard Mode (Vite Development Server)
+Runs Vite with ultra-fast Hot Module Replacement (HMR):
 ```bash
 npm run dev
 ```
-> Access app at: `http://localhost:5173`
+> Open your browser at: `http://localhost:5173`
 
-#### 🟡 Full-Stack API Mode (Express Server)
-Runs local Express backend for testing `/api/contact` alongside the app:
+#### 🟡 Full-Stack API Mode (Express Local Server)
+Runs the Express backend alongside the Vite frontend to test the `/api/contact` endpoint locally:
 ```bash
 npx tsx server.ts
 ```
-> Access app at: `http://localhost:3000`
+> Open your browser at: `http://localhost:3000`
 
 ---
 
-## 📦 Production Build & Deployment
+## 🛠️ Available npm Commands
 
-### Build Executable Bundle
-To create an optimized production build in the `dist/` directory:
-```bash
-npm run build
-```
-
-### Preview Production Build Locally
-```bash
-npm run preview
-```
-
-### 🚀 Deploying to Vercel
-This repository is pre-configured for Vercel deployment via `vercel.json`:
-1. Push your repository to GitHub.
-2. Import the repo in your [Vercel Dashboard](https://vercel.com/dashboard).
-3. Vercel will automatically detect Vite and serve static assets along with serverless API routes in `api/contact.ts`.
+| Script | Command | Purpose |
+| :--- | :--- | :--- |
+| **Development** | `npm run dev` | Starts Vite local development server with HMR |
+| **Build** | `npm run build` | Builds optimized production bundle in `dist/` |
+| **Preview** | `npm run preview` | Previews production build locally |
+| **Type Check** | `npm run lint` | Runs TypeScript compiler checks without emitting code |
+| **Express Backend** | `npx tsx server.ts` | Runs Express backend server locally |
 
 ---
 
-## 📬 Contact & Connect
+## 📬 Contact & Social Links
 
 <div align="center">
 
-  <a href="https://github.com/">
+  <a href="https://github.com/rastkshitij" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <a href="https://linkedin.com/">
+  <a href="https://www.linkedin.com/in/kshitij-rastogi-4648a6295/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="mailto:your-email@example.com">
+  <a href="https://www.instagram.com/rastogi_kshitij_?igsh=MXY5azhlc2E3bTR2MA%3D%3D&utm_source=qr" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <a href="mailto:rastkshitij@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
+
+  <br /><br />
+
+  <p>
+    📍 <strong>Location</strong>: Shahjahanpur, Uttar Pradesh, India
+  </p>
 
 </div>
 
@@ -212,8 +238,10 @@ This repository is pre-configured for Vercel deployment via `vercel.json`:
 
 ## 📄 License
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+This project is open-source and licensed under the **[MIT License](LICENSE)**.
 
 <div align="center">
-  <sub>Built with ❤️ by <strong>Kshitij Rastogi</strong> using React, Three.js & Framer Motion</sub>
+  <br />
+  <sub>Designed & Developed with ❤️ by <strong>Kshitij Rastogi</strong> using React, Three.js & Framer Motion</sub>
 </div>
+
