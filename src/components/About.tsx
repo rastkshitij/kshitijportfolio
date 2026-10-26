@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Server, Palette, User, Target, Rocket, Database , Brain , Container , FolderGit} from 'lucide-react';
-import { data } from 'framer-motion/client';
-import { version } from 'os';
+import { Code, Server, Palette, User, Target, Rocket, Database, Brain, Container, FolderGit } from 'lucide-react';
+import SpotlightCard from './SpotlightCard';
 //skill section
 const skills = {
   programming: ['JavaScript', 'Python', 'C' , 'Typescript'],
@@ -25,8 +24,8 @@ export default function About() {
           transition={{ duration: 0.8, type: "spring" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground tracking-tighter">About Me</h2>
-          <div className="w-24 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tighter">About Me</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-[#22c55e] to-[#dc2626] mx-auto rounded-full" />
         </motion.div>
 
         {/* Part 1: Who I am & My Journey */}
@@ -74,9 +73,9 @@ export default function About() {
                 { year: '2020', title: '10th Grade', desc: 'Takshashila Public School (87%)' }
               ].map((item, i) => (
                 <div key={i} className="relative pl-8 border-l-2 border-primary/30">
-                  <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_rgba(var(--primary),0.5)]" />
-                  <span className="text-xs font-black text-primary uppercase tracking-widest mb-1 block">{item.year}</span>
-                  <h4 className="text-xl font-black text-foreground mb-1">{item.title}</h4>
+                  <div className={`absolute left-[-9px] top-0 w-4 h-4 rounded-full ${i === 0 ? 'bg-[#dc2626] shadow-[0_0_10px_rgba(220,38,38,0.7)]' : 'bg-primary shadow-[0_0_10px_rgba(22,163,74,0.5)]'}`} />
+                  <span className={`text-xs font-black uppercase tracking-widest mb-1 block ${i === 0 ? 'text-[#dc2626]' : 'text-primary'}`}>{item.year}</span>
+                  <h4 className="text-xl font-black text-white mb-1">{item.title}</h4>
                   <p className="text-foreground/70 font-medium">{item.desc}</p>
                 </div>
               ))}
@@ -92,8 +91,8 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h3 className="text-3xl md:text-5xl font-black mb-4 text-foreground tracking-tighter">My Skillset</h3>
-          <div className="w-16 h-1.5 bg-primary mx-auto rounded-full mb-12" />
+          <h3 className="text-3xl md:text-5xl font-black mb-4 text-white tracking-tighter">My Skillset</h3>
+          <div className="w-16 h-1.5 bg-gradient-to-r from-primary to-[#dc2626] mx-auto rounded-full mb-12" />
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -109,26 +108,45 @@ export default function About() {
                 key={skillGroup.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.2 }}
+                transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="glass p-8 rounded-[2.5rem] border border-border bg-card/30 hover:border-primary/50 transition-all group"
+                className="h-full"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 mx-auto group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                  {skillGroup.icon}
-                </div>
-                <h4 className="text-xl font-black mb-6 text-foreground uppercase tracking-wider">
-                  {skillGroup.title}
-                </h4>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {skillGroup.items.map((skill) => (
-                    <span 
-                      key={skill}
-                      className="px-4 py-2 bg-background rounded-xl text-xs font-black text-foreground border border-border shadow-md"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+                <SpotlightCard
+                  theme="dark"
+                  spotlightColor="#22c55e"
+                  intensity={0.2}
+                  spotlightSize={260}
+                  softness={0.7}
+                  shape="circle"
+                  borderGlow={0.6}
+                  proximity={80}
+                  smoothing={0.3}
+                  grain={0}
+                  ambient={false}
+                  flare
+                  glassmorphism
+                  className="h-full p-8 rounded-[2.5rem] flex flex-col justify-between group transition-all"
+                >
+                  <div>
+                    <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 mx-auto group-hover:bg-primary group-hover:text-white transition-all shadow-lg">
+                      {skillGroup.icon}
+                    </div>
+                    <h4 className="text-xl font-black mb-6 text-white uppercase tracking-wider text-center">
+                      {skillGroup.title}
+                    </h4>
+                  </div>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {skillGroup.items.map((skill) => (
+                      <span 
+                        key={skill}
+                        className="px-3.5 py-1.5 bg-[#0e1014]/70 rounded-xl text-xs font-bold text-white/90 border border-white/[0.08] shadow-sm hover:border-primary/50 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>

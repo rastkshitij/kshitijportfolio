@@ -31,8 +31,8 @@ export default function Contact() {
           transition={{ duration: 0.8, type: "spring" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground tracking-tighter">Get In Touch</h2>
-          <div className="w-24 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tighter">Get In Touch</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-[#22c55e] to-[#dc2626] mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
@@ -44,7 +44,7 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="glass p-10 rounded-[3rem] border border-border bg-card/80 shadow-2xl">
-              <h3 className="text-3xl font-black mb-8 text-foreground">Let's build something amazing together</h3>
+              <h3 className="text-3xl font-black mb-8 text-white">Let's build something amazing together</h3>
               <p className="text-foreground mb-12 text-lg font-medium leading-relaxed opacity-80">
                 I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
               </p>

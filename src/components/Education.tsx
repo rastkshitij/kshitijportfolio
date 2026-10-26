@@ -38,8 +38,8 @@ export default function Education() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground tracking-tighter">Educational Journey</h2>
-          <div className="w-24 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tighter">Educational Journey</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-[#22c55e] to-[#dc2626] mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -58,16 +58,16 @@ export default function Education() {
               </div>
               
               <div className="flex-grow">
-                <span className="text-xs font-black text-primary mb-4 block uppercase tracking-widest">{item.period}</span>
-                <h3 className="text-2xl font-black mb-4 leading-tight text-foreground">{item.degree}</h3>
-                <p className="text-foreground font-bold mb-2 opacity-80">{item.institution}</p>
+                <span className={`text-xs font-black mb-4 block uppercase tracking-widest ${index === 0 ? 'text-[#dc2626]' : 'text-primary'}`}>{item.period}</span>
+                <h3 className="text-2xl font-black mb-4 leading-tight text-white">{item.degree}</h3>
+                <p className="text-foreground/80 font-bold mb-2">{item.institution}</p>
                 {item.university && <p className="text-xs text-muted-foreground mb-6 italic">{item.university}</p>}
               </div>
 
               <div className="mt-8 pt-8 border-t border-border flex items-center justify-between">
                 <span className="text-sm font-black text-primary">{item.details}</span>
                 <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                  <div className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-[#dc2626]' : 'bg-primary'} animate-ping`} />
                 </div>
               </div>
             </motion.div>

@@ -16,8 +16,8 @@ export default function Experience() {
           transition={{ duration: 0.8, type: "spring" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground tracking-tighter">Internship Experience</h2>
-          <div className="w-24 h-2 bg-gradient-to-r from-primary to-emerald-400 mx-auto rounded-full" />
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tighter">Internship Experience</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-[#22c55e] to-[#dc2626] mx-auto rounded-full" />
         </motion.div>
 
         <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-8">
@@ -35,9 +35,9 @@ export default function Experience() {
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 relative z-10">
               <div>
                 <h3 className="text-3xl font-black text-primary mb-2">Virtual Lab Developer</h3>
-                <p className="text-xl font-bold text-foreground">IIT Kanpur</p>
+                <p className="text-xl font-bold text-white">IIT Kanpur</p>
               </div>
-              <span className="px-6 py-2 bg-primary text-primary-foreground rounded-full text-sm font-bold shadow-lg shadow-primary/30">
+              <span className="px-6 py-2 bg-[#dc2626] text-white rounded-full text-sm font-bold shadow-lg shadow-[#dc2626]/30">
                 Internship
               </span>
             </div>

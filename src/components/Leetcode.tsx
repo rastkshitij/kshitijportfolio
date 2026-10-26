@@ -396,10 +396,10 @@ export default function Leetcode() {
                     transition={{ duration: 0.8, type: 'spring' }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground tracking-tighter">
+                    <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tighter">
                         LeetCode Profile
                     </h2>
-                    <div className="w-24 h-2 bg-gradient-to-r from-primary to-emerald-400 mx-auto rounded-full" />
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-[#22c55e] to-[#dc2626] mx-auto rounded-full" />
                     <p className="text-muted-foreground mt-4 text-lg font-medium">
                         Daily coding progress &amp; problem-solving stats
                     </p>

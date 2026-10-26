@@ -7,12 +7,12 @@ import  hackspace  from '../public/hackspace.png'
 import collegehack from '../public/collagehackfest.jpg'
 const certificates = [
   {
-    title: 'Top 14th in 24hr Hackathon by GDG CLOUD DELHI- Hackfest',
+    title: 'Finalist in 24hr Hackathon by GDG CLOUD DELHI- Hackfest',
   issuer: 'GDG CLOUD NEW DELHI',
     image: hack1,
   },
   {
-    title: 'Top 10th in24hr Hackathon by GDG CLOUD DELHI- Hackfest 2.0',
+    title: 'Finalist in 24hr Hackathon by GDG CLOUD DELHI- Hackfest 2.0',
     issuer: 'GDG CLOUD NEW DELHI',
     image: hack2,
   },
@@ -44,8 +44,8 @@ export default function Certificates() {
           transition={{ duration: 0.8, type: "spring" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground tracking-tighter">Hackathons & Certificates</h2>
-          <div className="w-24 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tighter">Hackathons & Certificates</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-[#22c55e] to-[#dc2626] mx-auto rounded-full" />
         </motion.div>
 
         <div className="relative max-w-5xl mx-auto">

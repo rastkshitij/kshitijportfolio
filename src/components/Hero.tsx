@@ -3,11 +3,12 @@ import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'fram
 import { motion as motion3d } from 'framer-motion-3d';
 import { Typewriter } from 'react-simple-typewriter';
 import { Github, Linkedin, Mail, ChevronDown, Sparkles, Heart, MessageCircle, Send, Bookmark, MoreHorizontal, Instagram, Twitter, ArrowRight, Terminal } from 'lucide-react';
-import { Link } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere, MeshWobbleMaterial, Icosahedron, PerspectiveCamera, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 import image from '../public/newProfile.jpeg';
+import ProfileCard from './ProfileCard';
 
 function GradientMesh() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -22,7 +23,7 @@ function GradientMesh() {
   return (
     <Sphere ref={meshRef} args={[15, 64, 64]}>
       <MeshDistortMaterial
-        color="#10b981"
+        color="#16a34a"
         speed={1.5}
         distort={0.4}
         radius={1}
@@ -84,14 +85,14 @@ export default function Hero() {
     <section id="home" ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 bg-background transition-colors duration-1000">
       {/* Advanced Futuristic Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(#10b98115_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(#16a34a18_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:100px_100px]" />
         
         {/* Scanning Line */}
         <motion.div 
           animate={{ top: ['-10%', '110%'] }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-10"
+          className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10"
         />
 
         <Canvas className="opacity-20 dark:opacity-10">
@@ -112,13 +113,13 @@ export default function Hero() {
         <div className="absolute bottom-10 left-10 w-24 h-24 border-b-2 border-l-2 border-primary/30 rounded-bl-3xl" />
         <div className="absolute bottom-10 right-10 w-24 h-24 border-b-2 border-r-2 border-primary/30 rounded-br-3xl" />
         
-        {/* Data Rails */}
-        <div className="absolute top-1/2 left-8 -translate-y-1/2 hidden xl:flex flex-col gap-12 items-center">
-          <div className="w-[1px] h-40 bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
-          <span className="text-[10px] font-mono text-primary/50 vertical-rl rotate-180 tracking-[0.6em] uppercase">Code
-Develop
-Build</span>
-          <div className="w-[1px] h-40 bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
+        {/* Data Rail - Forest Green */}
+        <div className="absolute top-1/2 left-3 xl:left-6 -translate-y-1/2 hidden lg:flex flex-col gap-6 items-center z-10 pointer-events-none select-none">
+          <div className="w-[1.5px] h-24 bg-gradient-to-b from-transparent via-[#22c55e] to-transparent shadow-[0_0_10px_#22c55e]" />
+          <span className="text-[11px] font-mono font-bold text-[#22c55e] [writing-mode:vertical-rl] tracking-[0.55em] uppercase drop-shadow-[0_0_12px_rgba(34,197,94,0.8)]">
+            BUILD • DEVELOP • CODE
+          </span>
+          <div className="w-[1.5px] h-24 bg-gradient-to-b from-transparent via-[#22c55e] to-transparent shadow-[0_0_10px_#22c55e]" />
         </div>
       </div>
 
@@ -132,26 +133,25 @@ Build</span>
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 flex flex-col items-start"
           >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="px-4 py-1.5 rounded-sm bg-primary/10 border border-primary/30 text-[10px] font-black text-primary uppercase tracking-[0.3em]">
-                System_Protocol: Active
-              </div>
-              <div className="h-[1px] w-16 bg-primary/30" />
-              <span className="text-[10px] font-mono text-foreground/50 uppercase tracking-[0.4em]">Deploy
-Debug
-Compile
-Execute</span>
+            {/* Tagline matching reference: SAME ROADS / NEW PERSPECTIVES */}
+            <div className="flex items-center gap-3 mb-5">
+              <span className="text-[11px] md:text-xs font-mono text-[#94a3b8] tracking-[0.45em] uppercase font-bold">
+                SAME PASSION / NEW PERSPECTIVES
+              </span>
             </div>
             
-            <h1 className="text-7xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.85] text-foreground">
-              KSHITIJ <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-teal-500 drop-shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-                RASTOGI
+            {/* Title matching reference image: BUILT (Red) DIFFERENTLY (Mint White) */}
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-7 tracking-tight leading-[0.88] select-none">
+              <span className="block text-[#dc2626] drop-shadow-[0_0_35px_rgba(220,38,38,0.5)]">
+                KSHITIJ
+              </span>
+              <span className="block text-[#e6f4ea] font-serif tracking-normal md:tracking-tight font-bold">
+                RASTOGI<span className="text-[#dc2626]">.</span>
               </span>
             </h1>
 
-            <div className="flex flex-col gap-8 mb-12">
-              <div className="text-2xl md:text-4xl font-bold text-foreground/90 leading-tight max-w-2xl">
+            <div className="flex flex-col gap-6 mb-10">
+              <div className="text-xl md:text-3xl font-semibold text-[#cbd5e1] leading-relaxed max-w-2xl">
                 <Typewriter
                   words={['Architecting high-performance digital systems.', 'Designing immersive futuristic interfaces.', 'Pioneering next-gen web architectures.']}
                   loop={0}
@@ -163,36 +163,31 @@ Execute</span>
                 />
               </div>
               <div className="flex flex-wrap gap-4">
-                <div className="px-4 py-2 bg-secondary/50 border border-border rounded-lg backdrop-blur-sm">
-                  <div className="text-[10px] font-mono text-primary/70 uppercase mb-1">Status</div>
-                  <div className="text-xs font-bold">AVAILABLE_FOR_HIRE</div>
-                </div>
-                <div className="px-4 py-2 bg-secondary/50 border border-border rounded-lg backdrop-blur-sm">
-                  <div className="text-[10px] font-mono text-primary/70 uppercase mb-1">Location</div>
-                  <div className="text-xs font-bold">28.6139° N, 77.2090° E</div>
-                </div>
-                <div className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-lg backdrop-blur-sm">
-                  <div className="text-[10px] font-mono text-primary/70 uppercase mb-1">Movement_Vector</div>
-                  <div className="text-xs font-bold font-mono">
-                    {window.scrollY < (document.documentElement.scrollHeight - window.innerHeight) * 0.3 ? '(1.0, 0.0, 0.0) IDLE' : 
-                     window.scrollY < (document.documentElement.scrollHeight - window.innerHeight) * 0.7 ? '(0.0, 1.0, 0.0) WALK' : 
-                     '(0.0, 0.0, 1.0) RUN'}
+                <div className="px-4 py-2 bg-secondary/60 border border-border rounded-xl backdrop-blur-sm">
+                  <div className="text-[10px] font-mono text-[#dc2626] uppercase mb-0.5 flex items-center gap-1.5 font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626] animate-pulse" />
+                    Status
                   </div>
+                  <div className="text-xs font-bold text-white">AVAILABLE_FOR_HIRE</div>
+                </div>
+                <div className="px-4 py-2 bg-secondary/60 border border-border rounded-xl backdrop-blur-sm">
+                  <div className="text-[10px] font-mono text-primary uppercase mb-0.5 font-bold">Location</div>
+                  <div className="text-xs font-bold text-white">28.6139° N, 77.2090° E</div>
                 </div>
               </div>
             </div>
             
+            {/* Explore Button matching the reference image */}
             <div className="flex flex-wrap gap-8 items-center">
-              <Link to="projects" smooth={true} duration={1000} offset={-70}>
+              <Link to="projects" smooth={true} duration={2000} offset={-70}>
                 <motion.button 
-                  whileHover={{ scale: 1.05, x: 10 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative px-14 py-7 bg-foreground text-background rounded-none font-black text-xs uppercase tracking-[0.4em] transition-all overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.1)]"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="group relative px-9 py-4 bg-[#14161d] border border-white/20 hover:border-[#dc2626] text-white rounded-full font-bold text-xs uppercase tracking-[0.3em] transition-all flex items-center gap-3 shadow-xl hover:shadow-[0_0_25px_rgba(220,38,38,0.3)]"
                 >
                   <span className="relative z-10 flex items-center gap-3">
-                    Initiate_Protocol <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                    EXPLORE <ArrowRight size={16} className="text-[#dc2626] group-hover:translate-x-1.5 transition-transform" />
                   </span>
-                  <div className="absolute inset-0 bg-primary translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
                 </motion.button>
               </Link>
               
@@ -207,8 +202,8 @@ Execute</span>
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.3, color: 'var(--primary)', y: -8 }}
-                    className="text-foreground/40 transition-all duration-300"
+                    whileHover={{ scale: 1.3, color: '#dc2626', y: -6 }}
+                    className="text-foreground/50 transition-all duration-300"
                   >
                     {social.icon}
                   </motion.a>
@@ -217,94 +212,46 @@ Execute</span>
             </div>
           </motion.div>
 
-          {/* Right Content - Precision Card Positioning (5 cols) */}
-          <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-center perspective-3000 min-h-[600px] lg:px-12">
+          {/* Right Content - Interactive Holographic ProfileCard */}
+          <div className="lg:col-span-5 relative flex items-center justify-center min-h-[580px] lg:px-6">
             <motion.div
-              style={{ 
-                rotateX: finalRotateX, 
-                rotateY: finalRotateY, 
-                rotateZ: scrollRotateZ, 
-                scale: cardScale,
-                x: cardX
-              }}
-              initial={{ opacity: 0, scale: 0.4, rotateY: -70, x: 300 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0, x: 0 }}
-              transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 flex justify-center w-full"
             >
-              {/* The Formal Futuristic Card */}
-              <div className="w-[340px] bg-card/70 backdrop-blur-3xl rounded-none border-t-2 border-l-2 border-primary/50 shadow-[30px_30px_80px_rgba(0,0,0,0.4)] dark:shadow-[30px_30px_80px_rgba(0,0,0,0.7)] overflow-hidden transform-gpu group">
-                {/* Header */}
-                <div className="p-7 flex items-center justify-between bg-primary/10 border-b border-primary/20">
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-mono text-primary uppercase tracking-[0.4em] mb-1">Identity_Verified</span>
-                    <h3 className="text-sm font-black text-foreground tracking-tighter">KSHITIJ_RASTOGI.SYS</h3>
-                  </div>
-                  <div className="w-10 h-10 rounded-sm bg-primary/20 flex items-center justify-center">
-                    <Sparkles size={20} className="text-primary animate-pulse" />
-                  </div>
-                </div>
-
-                {/* Image Area */}
-                <div className="aspect-[4/5] relative overflow-hidden">
-                  <img 
-                    src={image} 
-                    alt="Profile" 
-                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
-                    referrerPolicy="no-referrer"
-                  />
-                  {/* Scanline Effect */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.3)_50%),linear-gradient(90deg,rgba(255,0,0,0.08),rgba(0,255,0,0.04),rgba(0,0,255,0.08))] bg-[size:100%_3px,4px_100%] pointer-events-none opacity-30" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/60 to-transparent">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_#10b981]" />
-                      <span className="text-[10px] font-black text-white uppercase tracking-[0.5em]">System_Online</span>
-                    </div>
-                    <p className="text-white/70 text-xs font-mono leading-relaxed">Status: Architecting_Next_Gen_Interfaces</p>
-                  </div>
-                </div>
-
-                {/* Footer */}
-                <div className="p-8 space-y-8 bg-primary/5">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="p-4 bg-foreground/5 border border-foreground/10 backdrop-blur-sm">
-                      <p className="text-[9px] font-mono text-foreground/50 uppercase mb-2 tracking-widest">Projects</p>
-                      <p className="text-2xl font-black text-primary">5+</p>
-                    </div>
-                    <div className="p-4 bg-foreground/5 border border-foreground/10 backdrop-blur-sm">
-                      <p className="text-[9px] font-mono text-foreground/50 uppercase mb-2 tracking-widest">Experience</p>
-                      <p className="text-2xl font-black text-primary">2Y+</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between pt-6 border-t border-foreground/10">
-                    <Link to="contact" smooth={true} duration={1000} offset={-70}>
-                      <button className="text-[11px] font-black uppercase tracking-[0.4em] text-primary hover:text-foreground transition-all flex items-center gap-2">
-                        Connect_Terminal <ArrowRight size={14} />
-                      </button>
-                    </Link>
-                    <div className="flex gap-1">
-                      <div className="w-1.5 h-1.5 bg-primary/40 rounded-full" />
-                      <div className="w-1.5 h-1.5 bg-primary/20 rounded-full" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative HUD Elements around card */}
-              <div className="absolute -top-12 -right-12 w-40 h-40 border-t-2 border-r-2 border-primary/40 pointer-events-none rounded-tr-3xl" />
-              <div className="absolute -bottom-12 -left-12 w-40 h-40 border-b-2 border-l-2 border-primary/40 pointer-events-none rounded-bl-3xl" />
-              <div className="absolute top-1/2 -right-20 -translate-y-1/2 flex flex-col gap-3">
-                <div className="w-1.5 h-1.5 bg-primary shadow-[0_0_10px_#10b981]" />
-                <div className="w-1.5 h-1.5 bg-primary/50" />
-                <div className="w-1.5 h-1.5 bg-primary/20" />
-              </div>
+              <ProfileCard
+                name="Kshitij Rastogi"
+                title="Full Stack & AI Developer"
+                handle="rastkshitij"
+                status="Online"
+                statusColor="#16a34a"
+                contactText="Contact"
+                avatarUrl={image}
+                miniAvatarUrl={image}
+                holo={1}
+                glare={0.25}
+                tiltStrength={14}
+                parallax={8}
+                radius={16}
+                enableTilt
+                intro
+                showUserInfo
+                enableMobileTilt={false}
+                theme="dark"
+                onContactClick={() => {
+                  scroller.scrollTo('contact', {
+                    smooth: true,
+                    duration: 2000,
+                    offset: -70
+                  });
+                }}
+              />
             </motion.div>
 
-            {/* Background HUD Rings */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] border border-primary/5 rounded-full animate-[spin_80s_linear_infinite] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] border border-dashed border-primary/10 rounded-full animate-[spin_50s_linear_infinite_reverse] pointer-events-none" />
+            {/* Ambient HUD Accent Rings */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] border border-primary/10 rounded-full animate-[spin_80s_linear_infinite] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] border border-dashed border-[#dc2626]/15 rounded-full animate-[spin_60s_linear_infinite_reverse] pointer-events-none" />
           </div>
         </div>
       </div>

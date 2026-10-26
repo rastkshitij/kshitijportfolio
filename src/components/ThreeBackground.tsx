@@ -50,10 +50,10 @@ function Soldier({ mode = 'idle' }: { mode?: 'idle' | 'walk' | 'run' }) {
 }
 
 export default function ThreeBackground({ mode = 'idle' }: { mode?: 'idle' | 'walk' | 'run' }) {
-  // Force dark theme colors as requested for the background
-  const bgColor = '#020617';
-  const fogColor = '#020617';
-  const accentColor = '#10b981';
+  // Charcoal black and forest green theme
+  const bgColor = '#0e1014';
+  const fogColor = '#0e1014';
+  const accentColor = '#16a34a';
 
   return (
     <div className="fixed inset-0 -z-10 bg-transparent pointer-events-none transition-opacity duration-1000">
@@ -61,7 +61,7 @@ export default function ThreeBackground({ mode = 'idle' }: { mode?: 'idle' | 'wa
         <color attach="background" args={[bgColor]} />
         <fog attach="fog" args={[fogColor, 5, 20]} />
         
-        <ambientLight intensity={0.2} />
+        <ambientLight intensity={0.25} />
         <spotLight 
           position={[10, 10, 10]} 
           angle={0.15} 
@@ -71,6 +71,7 @@ export default function ThreeBackground({ mode = 'idle' }: { mode?: 'idle' | 'wa
           color={accentColor}
         />
         <pointLight position={[-10, -10, -10]} intensity={0.5} color={accentColor} />
+        <pointLight position={[10, -5, -5]} intensity={0.25} color="#dc2626" />
         <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
         
         <Suspense fallback={null}>
@@ -78,10 +79,10 @@ export default function ThreeBackground({ mode = 'idle' }: { mode?: 'idle' | 'wa
             <Soldier mode={mode} />
           </Float>
           
-          {/* Ground plane as in the example but styled for dark theme */}
+          {/* Ground plane styled for charcoal black */}
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
             <planeGeometry args={[100, 100]} />
-            <meshStandardMaterial color="#0f172a" roughness={0.8} metalness={0.2} />
+            <meshStandardMaterial color="#14171d" roughness={0.85} metalness={0.15} />
           </mesh>
 
           <ContactShadows 

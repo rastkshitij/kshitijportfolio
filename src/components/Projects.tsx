@@ -49,8 +49,8 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground tracking-tighter">Featured Projects</h2>
-          <div className="w-24 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tighter">Featured Projects</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-[#22c55e] to-[#dc2626] mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,18 +82,18 @@ export default function Projects() {
               </div>
               
               <div className="p-8">
-                <h3 className="text-2xl font-black mb-3 text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-foreground text-sm mb-6 font-medium line-clamp-3 leading-relaxed opacity-80">
+                <h3 className="text-2xl font-black mb-3 text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-foreground/80 text-sm mb-3 font-medium line-clamp-3 leading-relaxed">
                   {project.description}
                 </p>
-                 <p className="text-foreground text-sm mb-6 font-medium line-clamp-3 leading-relaxed opacity-80">
+                <p className="text-primary/90 text-xs mb-6 font-semibold tracking-wide">
                   {project.features.join(' • ')}
                 </p>
-                <div className="flex gap-6">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-black text-primary hover:underline uppercase tracking-widest">
+                <div className="flex gap-6 items-center">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-black text-primary hover:text-white transition-colors uppercase tracking-widest">
                     <Github size={18} /> Code
                   </a>
-                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-black text-primary hover:underline uppercase tracking-widest">
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-black text-[#dc2626] hover:text-white transition-colors uppercase tracking-widest">
                     <ExternalLink size={18} /> Demo
                   </a>
                 </div>
